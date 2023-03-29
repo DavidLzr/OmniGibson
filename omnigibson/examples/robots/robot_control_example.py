@@ -126,6 +126,9 @@ def main(random_selection=False, headless=False, short_exec=False):
     print("Running demo.")
     print("Press ESC to quit")
 
+    if hasattr(robot, "set_params_for_vr"):
+        robot.set_params_for_vr()
+
     # Loop control until user quits
     max_steps = -1 if not short_exec else 100
     step = 0

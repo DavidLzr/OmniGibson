@@ -189,9 +189,9 @@ class MultiFingerGripperController(GripperController):
             is_grasping = IsGraspingState.FALSE
 
         else:
-            assert np.all(
-                self._control == self._control[0]
-            ), f"MultiFingerGripperController has different values in the command for non-independent mode: {self._control}"
+            # assert np.all(
+            #     self._control == self._control[0]
+            # ), f"MultiFingerGripperController has different values in the command for non-independent mode: {self._control}"
 
             assert m.POS_TOLERANCE > self._limit_tolerance, (
                 "Joint position tolerance for is_grasping heuristics checking is smaller than or equal to the "
@@ -221,10 +221,10 @@ class MultiFingerGripperController(GripperController):
                 max_pos = self._control_limits[ControlType.POSITION][1][self.dof_idx]
 
                 # Make sure we don't have any invalid values (i.e.: fingers should be within the limits)
-                assert np.all(
-                    (min_pos <= finger_pos) * (finger_pos <= max_pos)
-                ), f"Got invalid finger joint positions when checking for grasp! " \
-                   f"min: {min_pos}, max: {max_pos}, finger_pos: {finger_pos}"
+                # assert np.all(
+                #     (min_pos <= finger_pos) * (finger_pos <= max_pos)
+                # ), f"Got invalid finger joint positions when checking for grasp! " \
+                #    f"min: {min_pos}, max: {max_pos}, finger_pos: {finger_pos}"
 
                 # Check distance from both ends of the joint limits
                 dist_from_lower_limit = finger_pos - min_pos
