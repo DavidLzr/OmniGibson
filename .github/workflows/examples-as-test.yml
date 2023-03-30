@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true
           path: omnigibson
@@ -50,7 +50,7 @@ jobs:
         run: pip uninstall -y bddl
 
       - name: Checkout BDDL
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: StanfordVL/bddl-dev
           ref: 581be50e7cfd2b3a1447aaa1b4fc2424b673339c

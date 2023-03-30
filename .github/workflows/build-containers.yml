@@ -16,7 +16,7 @@ jobs:
     name: Push images to docker.io
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Log in to docker.io
         uses: redhat-actions/podman-login@v1
         with:
